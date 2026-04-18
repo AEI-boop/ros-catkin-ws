@@ -8,3 +8,4 @@ __pycache__/
 .DS_Store
 Pictures/L4/实验4_图像与视频附件.zip
 Pictures/L4/手动，自动检测距离视频.mp4
+.spec-workflow/
