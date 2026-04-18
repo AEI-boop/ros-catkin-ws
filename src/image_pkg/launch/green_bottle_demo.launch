@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find wpr_simulation)/launch/wpr_bottles.launch" />
+  <include file="$(find image_pkg)/launch/green_bottle_move_distance.launch" />
+</launch>

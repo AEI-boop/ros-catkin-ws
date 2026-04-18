@@ -1,0 +1,4 @@
+<launch>
+  <!-- Compatibility alias for course materials -->
+  <include file="$(find wpr_simulation)/launch/wpb_table.launch"/>
+</launch>

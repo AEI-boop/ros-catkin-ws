@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="image_pkg" type="get_pointcloud3.py" name="get_pointcloud3" output="screen">
+    <param name="sample_step" value="2" />
+    <param name="max_depth_m" value="5.0" />
+    <param name="depth_scale" value="0.001" />
+    <param name="publish_rate" value="15.0" />
+    <param name="save_pcd" value="true" />
+    <param name="pcd_output" value="$(env HOME)/output_cloud.pcd" />
+  </node>
+</launch>

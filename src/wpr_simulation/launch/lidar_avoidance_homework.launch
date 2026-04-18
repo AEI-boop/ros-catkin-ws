@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="wpr_simulation"
+        type="lidar_avoidance_homework.py"
+        name="lidar_avoidance_homework"
+        output="screen">
+    <param name="scan_topic" value="/scan" />
+    <param name="cmd_vel_topic" value="/cmd_vel" />
+    <param name="safe_distance" value="0.80" />
+    <param name="warn_distance" value="1.20" />
+    <param name="linear_speed" value="0.15" />
+    <param name="slow_linear_speed" value="0.06" />
+    <param name="turn_speed" value="0.70" />
+  </node>
+</launch>

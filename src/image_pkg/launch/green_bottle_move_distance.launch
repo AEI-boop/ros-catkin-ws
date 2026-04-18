@@ -1,0 +1,20 @@
+<launch>
+  <node pkg="image_pkg" type="green_bottle_move_distance.py" name="green_bottle_move_distance" output="screen">
+    <param name="rgb_topic" value="/kinect2/hd/image_color_rect" />
+    <param name="depth_topic" value="/kinect2/sd/image_depth_rect" />
+
+    <param name="depth_scale" value="0.001" />
+    <param name="min_valid_depth_m" value="0.1" />
+    <param name="max_valid_depth_m" value="10.0" />
+    <param name="green_area_min" value="350" />
+    <param name="change_threshold_m" value="0.1" />
+
+    <param name="motion_enable" value="true" />
+    <param name="forward_speed" value="0.12" />
+    <param name="turn_speed" value="0.45" />
+    <param name="avoid_dist_m" value="0.60" />
+    <param name="publish_rate" value="10" />
+
+    <param name="show_debug" value="false" />
+  </node>
+</launch>

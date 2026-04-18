@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="image_pkg" type="red_bottle_distance.py" name="red_bottle_smart" output="screen">
+    <param name="depth_scale" value="0.001" />
+    <param name="min_valid_depth_m" value="0.1" />
+    <param name="max_valid_depth_m" value="10.0" />
+    <param name="red_area_min" value="500" />
+    <param name="change_threshold_m" value="0.1" />
+    <param name="near_change_threshold_m" value="0.05" />
+    <param name="publish_rate" value="10" />
+    <param name="show_debug" value="false" />
+  </node>
+</launch>

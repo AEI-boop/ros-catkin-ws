@@ -1,0 +1,4 @@
+<launch>
+  <!-- Bottle-and-table scene used by RGB-D/pointcloud experiments -->
+  <include file="$(find wpr_simulation)/launch/wpb_table.launch"/>
+</launch>
