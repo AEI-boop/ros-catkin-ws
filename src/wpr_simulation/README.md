@@ -60,6 +60,38 @@ roslaunch wpr_simulation wpb_navigation.launch
 ```
 ![wpb_navigation pic](./media/wpb_navigation.png)
 
+**实验12：GMapping SLAM建图**
+一键启动SLAM建图（包含场景、GMapping、RViz、键盘控制）：
+```
+roslaunch wpr_simulation gmapping.launch
+```
+保存地图：
+```
+cd ~
+rosrun map_server map_saver -f exp12_map
+```
+参数说明：
+- `enable_keyboard:=false` - 禁用键盘控制
+- `allow_online_models:=true` - 允许在线下载模型
+
+**实验13：自主导航**
+启动场景：
+```
+roslaunch wpr_simulation wpb_stage_robocup.launch
+```
+启动导航（新终端）：
+```
+roslaunch wpr_simulation wpb_demo_nav.launch
+```
+使用自定义地图：
+```
+roslaunch wpr_simulation wpb_demo_nav.launch map_file:=/path/to/your/map.yaml
+```
+RViz操作：
+1. 使用 `2D Pose Estimate` 设置初始位姿
+2. 使用 `2D Nav Goal` 设置目标点
+3. 添加 `Path` 显示查看路径规划
+
 物品抓取:
 ```
 roslaunch wpr_simulation wpb_table.launch

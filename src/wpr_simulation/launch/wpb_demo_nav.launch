@@ -1,4 +1,6 @@
 <launch>
+    <arg name="map_file" default="$(find wpr_simulation)/maps/exp11_map.yaml"/>
+
     <!--- Run move_base -->
     <node pkg="move_base" type="move_base" name="move_base">
         <rosparam file="$(find wpb_home_tutorials)/nav_lidar/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -10,7 +12,7 @@
     </node>
 
     <!-- Run map server -->
-    <node pkg="map_server" type="map_server" name="map_server" args="$(find wpr_simulation)/maps/map.yaml"/>
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)"/>
 
     <!--- Run AMCL -->
     <node pkg="amcl" type="amcl" name="amcl"/>
