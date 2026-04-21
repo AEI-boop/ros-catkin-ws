@@ -375,13 +375,6 @@ kinect2_camera_frame
 
 ## 8. 大文件说明
 
-以下两个大文件**没有纳入 Git 仓库**：
-
-- `Pictures/L4/实验4_图像与视频附件.zip`
-- `Pictures/L4/手动，自动检测距离视频.mp4`
-
-原因：
-
 - ZIP 文件接近 GitHub 推荐上限
 - MP4 文件超过 GitHub 100MB 硬限制，无法直接 push
 
