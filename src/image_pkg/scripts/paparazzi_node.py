@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
+import rospkg
 import cv2
 import os
 from sensor_msgs.msg import Image
@@ -89,9 +90,10 @@ def image_callback(msg):
 
         # 简单逻辑：如果发现目标几乎在画布正中央（对准了），说明是个好侧写时刻，触发拍照
         if abs(error_x) < 30 and photo_count < 3 and twistMsg.linear.x == 0.0:
-            filename = f"/home/starjie/catkin_ws/src/image_pkg/scripts/handsome_guy_{photo_count}.jpg"
+            package_dir = rospkg.RosPack().get_path("image_pkg")
+            filename = os.path.join(package_dir, "scripts", f"handsome_guy_{photo_count}.jpg")
             cv2.imwrite(filename, cv_image)
-            rospy.loginfo(f"📸 咔嚓！拍到了帅哥的一张写真！保存在: {filename}")
+            rospy.loginfo(f"咔嚓！拍到了帅哥的一张写真！保存在: {filename}")
             photo_count += 1
             # 加个巨大的滤镜动画反馈说拍了
             cv2.putText(cv_image, "* FLASH *", (cx - 50, cy - 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,255), 4)
